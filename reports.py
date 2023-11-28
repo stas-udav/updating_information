@@ -13,10 +13,9 @@ def generate_report(paragraph, title, attachment):
     for line in paragraph.split('\n'):
         paragraph_elements.append(Paragraph(line, styles['Body']))
 
-    doc.addPage(title_element)
-    doc.addPage(date_element)
+ # Add elements in doc and make add space between them
+    elements = [title_element, date_element, Spacer(1, 12)] + paragraph_elements
+    doc.build(elements)
+# add spaces between paragraphs    
     for element in paragraph_elements:
-        doc.addPage(element)
-        doc.addPage(Spacer(1, 20))
-
-    doc.build()
+        elements.append(Spacer(1, 12))
