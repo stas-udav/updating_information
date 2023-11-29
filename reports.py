@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 from datetime import date
